@@ -78,7 +78,7 @@ aztecToken.updateConfidentialTransferTransaction = async (transactionHash) => {
     // // fish out notes from input data
     const { inputs } = AZTECERC20Bridge.abi.find(v => ((v.name === 'confidentialTransfer') && (v.type === 'function')));
     inputs[inputs.length - 1].name = 'metadata';
-    const { notes, m } = web3.eth.abi.decodeParameters(
+    const { _notes: notes, _m: m } = web3.eth.abi.decodeParameters(
         inputs,
         `0x${transactionData.input.slice(10)}`
     );
