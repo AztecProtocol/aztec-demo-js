@@ -9,3 +9,4 @@ testWallets.json
 wallets.json
 
 contracts/
+node_modules
